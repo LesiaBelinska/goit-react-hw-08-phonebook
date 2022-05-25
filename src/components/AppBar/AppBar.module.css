@@ -1,0 +1,6 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(61, 47, 55, 0.2);
+    box-shadow: 1px rgba(20, 9, 16, 0.2);
+}
