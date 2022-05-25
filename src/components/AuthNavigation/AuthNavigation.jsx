@@ -1,18 +1,24 @@
 import { NavLink } from "react-router-dom";
 
+import s from "./AuthNavigation.module.css";
+
 export const AuthNavigation = () => {
     return (
         <nav>
-            <ul>
-                <li>
+            <ul className={s.list}>
+                <li className={s.item}>
                     <NavLink
-                        to="/register">
+                        to="/register"
+                        className={({isActive})=> isActive ? `${s.activeLink}` : `${s.link}`}
+                    >
                         Sign up
                     </NavLink>
                 </li>
-                <li>
+                <li className={s.item}>
                     <NavLink
-                        to="/login">
+                        to="/login"
+                        className={({isActive})=> isActive ? `${s.activeLink}` : `${s.link}`}
+                    >
                         Sign in
                     </NavLink>
                 </li>
