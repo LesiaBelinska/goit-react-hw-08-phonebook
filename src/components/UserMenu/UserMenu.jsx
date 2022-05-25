@@ -1,10 +1,10 @@
+import s from "./UserMenu.module.css";
 
-
-export const UserMenu=(useremail) => {
+export const UserMenu=() => {
     return (
-        <div>
-            <p>Welcome {useremail}</p>
-            <button type="button"></button>
+        <div className={s.menu}>
+            <p className={s.name}>Welcome</p>
+            <button type="button" className={s.button}>Sign out</button>
         </div>
     )
 }
