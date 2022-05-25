@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export const AuthNavigation = () => {
     return (
-        <div>
+        <nav>
             <ul>
                 <li>
                     <NavLink
@@ -17,6 +17,6 @@ export const AuthNavigation = () => {
                     </NavLink>
                 </li>
             </ul>
-        </div>
+        </nav>
     );
 }
