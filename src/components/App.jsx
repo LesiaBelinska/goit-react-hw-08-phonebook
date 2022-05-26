@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Toaster } from "react-hot-toast";
 
+import authOperations from "redux/auth/authOperations.js";
 import { Layout } from "./Layout/Layout";
 import HomePage from "pages/HomePage/HomePage.jsx";
 import RegisterPage from "pages/RegisterPage/RegisterPage.jsx";
@@ -10,6 +13,14 @@ import ContactsPage from "pages/ContactsPage/ContactsPage";
 
 
 export const App = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
+
   return (
     <>
       <Toaster />
