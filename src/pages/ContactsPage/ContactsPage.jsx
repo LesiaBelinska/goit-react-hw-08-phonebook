@@ -1,5 +1,5 @@
 //import { CreateContact } from "components/CreateContact/CreateContact.jsx";
-import { ContactList } from "components/ContactList/ContactList.jsx";
+//import { ContactList } from "components/ContactList/ContactList.jsx";
 // import { Filter } from "components/Filter/Filter.jsx";
 
 export default function ContactsPage() {
@@ -9,7 +9,7 @@ export default function ContactsPage() {
             {/* <CreateContact /> */}
             <h2>Contacts</h2>
             {/* <Filter /> */}
-            <ContactList />
+            {/* <ContactList /> */}
         </div>
     );
 };
