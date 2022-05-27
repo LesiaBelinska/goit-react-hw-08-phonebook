@@ -2,34 +2,34 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
-//import { useDeleteContactMutation } from 'redux/contactsSlice';
+import { useDeleteContactMutation } from 'redux/contacts/contactsSlice';
 import { Modal } from 'components/Modal/Modal.jsx';
 import s from "./ContactListItem.module.css";
 
-const ContactListItem = ({ id, name, number }) => {
+export const ContactListItem = ({ id, name, number }) => {
 
-    //const [deleteContact, result] = useDeleteContactMutation();
+    const [deleteContact, result] = useDeleteContactMutation();
     const [showModal, setShowModal] = useState(false);
 
     const toggleModal = () => {
         setShowModal(!showModal);
     };
     
-    //const onDeleteContact = () => deleteContact(id);
+    const onDeleteContact = () => deleteContact(id);
 
-    // useEffect(() => {
-    //     if (result.isSuccess) {
-    //         toast.success(`contact was deleted`);
-    //     }
-    //     return
+    useEffect(() => {
+        if (result.isSuccess) {
+            toast.success(`contact was deleted`);
+        }
+        return
       
-    // }, [result.isSuccess]);
+    }, [result.isSuccess]);
     
 
     return (
         <li className={s.item}>{name}: {number}
             <div className={s.btnGroup}>
-                {/* <button className={s.button} type="button"
+                <button className={s.button} type="button"
                     onClick={onDeleteContact}
                     disabled={result.isLoading}
                 >
@@ -37,7 +37,7 @@ const ContactListItem = ({ id, name, number }) => {
                 </button>
                 <button
                     className={s.button}
-                    onClick={toggleModal}>Update</button> */}
+                    onClick={toggleModal}>Update</button>
             </div>
             {showModal &&
                 <Modal
@@ -48,7 +48,6 @@ const ContactListItem = ({ id, name, number }) => {
     );
 }
 
-export default ContactListItem;
 
 ContactListItem.propTypes = {
     id: PropTypes.string.isRequired,
