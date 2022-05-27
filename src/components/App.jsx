@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
 
 import { PublicRoute } from "./PublicRoute/PublicRoute.jsx";
@@ -17,6 +17,7 @@ import ContactsPage from "pages/ContactsPage/ContactsPage";
 export const App = () => {
 
   const dispatch = useDispatch();
+  const isFetchingCurrentUser = useSelector(state => state.auth.isFetchingCurrentUser);
 
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
@@ -24,11 +25,12 @@ export const App = () => {
 
 
   return (
-    <>
+    !isFetchingCurrentUser && (
+       <>
       <Toaster />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<PublicRoute><HomePage /></PublicRoute>} />
+        <Route index element={<PublicRoute><HomePage /></PublicRoute>} />
           <Route path="/register" element={<PublicRoute restricted><RegisterPage /></PublicRoute>} />
           <Route path="/login" element={<PublicRoute restricted><LoginPage /></PublicRoute>} />
           <Route path="/contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
@@ -36,5 +38,6 @@ export const App = () => {
         </Route>
       </Routes>
     </>
+   )
   );
 };
