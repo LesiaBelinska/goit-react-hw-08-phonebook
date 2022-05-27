@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import toast from 'react-hot-toast';
 import PropTypes from 'prop-types';
 
-//import { useGetContactsQuery } from 'redux/contactsSlice.js';
+import { useGetContactsQuery } from 'redux/contacts/contactsSlice';
 import s from "./ContactForm.module.css";
 
 const schema = yup.object().shape({
@@ -14,20 +14,20 @@ const schema = yup.object().shape({
 });
 
 
-const ContactForm = ({ initialValues = {
+export const ContactForm = ({ initialValues = {
   name: '', number: '',}, onSubmit, buttonText }) => {
       
     const id = useId();
   
-  //const { data: contacts } = useGetContactsQuery();
+  const { data: contacts } = useGetContactsQuery();
 
 
   const handleSubmit = async (values, { resetForm }) => {
-//      if (contacts.find(contact => contact.name.toLocaleLowerCase() === values.name.toLocaleLowerCase())){
-//        toast.error(`${values.name} is already in contacts`)
-//         return
-//      }
-//    await onSubmit(values);
+     if (contacts.find(contact => contact.name.toLocaleLowerCase() === values.name.toLocaleLowerCase())){
+       toast.error(`${values.name} is already in contacts`)
+        return
+     }
+   await onSubmit(values);
     resetForm();
   };
 
@@ -60,8 +60,6 @@ const ContactForm = ({ initialValues = {
   );
   
 }
-
-export default ContactForm;
 
 ContactForm.propTypes = {
   initialValues: PropTypes.shape({
