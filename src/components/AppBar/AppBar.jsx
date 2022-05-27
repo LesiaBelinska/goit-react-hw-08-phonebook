@@ -1,7 +1,8 @@
 import { Navigation } from "components/Navigation/Navigation.jsx";
+import { useSelector } from "react-redux";
+
 import { AuthNavigation } from "components/AuthNavigation/AuthNavigation";
 import { UserMenu } from "components/UserMenu/UserMenu";
-import { useSelector } from "react-redux";
 
 import s from "./AppBar.module.css";
 
