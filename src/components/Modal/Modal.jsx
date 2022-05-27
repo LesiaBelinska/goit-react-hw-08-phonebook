@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import PropTypes from 'prop-types';
-import toast from "react-hot-toast";
-import { MdClose } from "react-icons/md";
+// import toast from "react-hot-toast";
+// import { MdClose } from "react-icons/md";
 
-//import { useGetContactByIdQuery, useUpdateContactMutation } from "redux/contactsSlice.js";
-import ContactForm from "components/ContactForm/ContactForm.jsx";
+//import { useGetContactByIdQuery, useUpdateContactMutation } from "redux/contacts/contactsSlice.js";
+//import { ContactForm } from "components/ContactForm/ContactForm.jsx";
 import s from "./Modal.module.css";
 
 export const Modal = ({ onClose, id }) => {
