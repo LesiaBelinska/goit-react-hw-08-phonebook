@@ -1,19 +1,17 @@
 import { useId } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-//import { changeFilter } from "redux/filterSlice";
+import { changeFilter } from "redux/contacts/filterSlice";
 import s from "./Filter.module.css";
 
 
-const Filter = () => {
+export const Filter = () => {
 
 const id = useId();
 const filter = useSelector(state => state.filter);
 const dispatch = useDispatch();
-    
 
-    const onChangeFilter = (event) => console.log(filter);
-// const onChangeFilter = (event) => dispatch(changeFilter(event.currentTarget.value));
+const onChangeFilter = (event) => dispatch(changeFilter(event.currentTarget.value));
 
     return (
         <div className={s.filter}>
@@ -28,4 +26,3 @@ const dispatch = useDispatch();
     );
 }
 
-export default Filter;
