@@ -1,52 +1,5 @@
-// import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
 
-// export const contactsApi = createApi({
-//     reducerPath: 'contacts',
-//     baseQuery: fetchBaseQuery({
-//         baseUrl: 'https://connections-api.herokuapp.com',
-//     }),
-//         tagTypes: ['Contact'],
-//         endpoints: builder => ({
-//             getContacts: builder.query({
-//                 query: () => ({
-//                     url: '/contacts',
-//                 }),
-//                 providesTags: ['Contact'],
-//             }),
-//            addContact: builder.mutation({
-//             query: (values) => ({
-//                 url: '/contacts',
-//                 method: 'POST',
-//                 body: values,
-//             }),
-//             invalidatesTags: ['Contact'],
-//         }),
-//         deleteContact: builder.mutation({
-//             query: (contactId) => ({
-//                 url: `/contacts/${contactId}`,
-//                 method: 'DELETE',
-//             }),
-//             invalidatesTags: ['Contact'],
-//         }),
-//         updateContact: builder.mutation({
-//             query: (fields) => ({
-//                 url: `/contacts/${fields.id}`,
-//                 method: 'PATCH',
-//                 body: fields,
-//             }),
-//             invalidatesTags: ['Contact'],
-//         }),
-//     })
-// })
-
-// export const {
-//     useGetContactsQuery,
-//     useAddContactMutation,
-//     useDeleteContactMutation,
-//     useUpdateContactMutation,
-// } = contactsApi;
-
-import { createApi } from '@reduxjs/toolkit/query';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import axios from 'axios';
 
 const axiosBaseQuery =
@@ -112,6 +65,57 @@ export const {
     useDeleteContactMutation,
     useUpdateContactMutation,
 } = contactsApi;
+
+
+
+// import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+// export const contactsApi = createApi({
+//     reducerPath: 'contacts',
+//     baseQuery: fetchBaseQuery({
+//         baseUrl: 'https://connections-api.herokuapp.com',
+//     }),
+//         tagTypes: ['Contact'],
+//         endpoints: builder => ({
+//             getContacts: builder.query({
+//                 query: () => ({
+//                     url: '/contacts',
+//                 }),
+//                 providesTags: ['Contact'],
+//             }),
+//            addContact: builder.mutation({
+//             query: (values) => ({
+//                 url: '/contacts',
+//                 method: 'POST',
+//                 body: values,
+//             }),
+//             invalidatesTags: ['Contact'],
+//         }),
+//         deleteContact: builder.mutation({
+//             query: (contactId) => ({
+//                 url: `/contacts/${contactId}`,
+//                 method: 'DELETE',
+//             }),
+//             invalidatesTags: ['Contact'],
+//         }),
+//         updateContact: builder.mutation({
+//             query: (fields) => ({
+//                 url: `/contacts/${fields.id}`,
+//                 method: 'PATCH',
+//                 body: fields,
+//             }),
+//             invalidatesTags: ['Contact'],
+//         }),
+//     })
+// })
+
+// export const {
+//     useGetContactsQuery,
+//     useAddContactMutation,
+//     useDeleteContactMutation,
+//     useUpdateContactMutation,
+// } = contactsApi;
+
 
 //  getContactById: builder.query({
 //                 query: (id) => ({ url: `/contacts${id}`, method: 'GET' }),
