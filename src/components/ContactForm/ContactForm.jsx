@@ -27,7 +27,7 @@ export const ContactForm = ({ initialValues = {
        toast.error(`${values.name} is already in contacts`)
         return
      }
-   await onSubmit(values);
+    await onSubmit(values);
     resetForm();
   };
 
@@ -50,7 +50,7 @@ export const ContactForm = ({ initialValues = {
         <Field
           className={s.input}
           type="tel"
-          name="namber"
+          name="number"
           id={`${id}-number`}
         />
         <ErrorMessage className={s.error} name="number" component="div" />
