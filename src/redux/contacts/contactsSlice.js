@@ -37,7 +37,7 @@ export const contactsApi = createApi({
             query: (values) => ({
                 url: '/contacts',
                 method: 'POST',
-                body: values,
+                data: values,
             }),
             invalidatesTags: ['Contact'],
         }),
@@ -52,7 +52,7 @@ export const contactsApi = createApi({
             query: (fields) => ({
                 url: `/contacts/${fields.id}`,
                 method: 'PATCH',
-                body: fields,
+                data: fields,
             }),
             invalidatesTags: ['Contact'],
         }),
