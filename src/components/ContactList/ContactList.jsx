@@ -20,13 +20,13 @@ export const ContactList = () => {
         <>
             {contacts ? isFetching : <p className={s.loading}>Loading...</p>}
             <ul>
-                {contacts && filteredContacts.map(({ id, name, phone }) => {
+                {contacts && filteredContacts.map(({ id, name, number }) => {
                     return (
                         <ContactListItem
                             key={id}
                             id={id}
                             name={name}
-                            number={phone}
+                            number={number}
                         />
                     )
                 })}
@@ -89,13 +89,13 @@ export const ContactList = () => {
 //         <>
 //             {filteredContacts ? isFetching : <p className={s.loading}>Loading...</p>}
 //             <ul>
-//                 {filteredContacts && filteredContacts.map(({ id, name, phone }) => {
+//                 {filteredContacts && filteredContacts.map(({ id, name, number }) => {
 //                     return (
 //                         <ContactListItem
 //                             key={id}
 //                             id={id}
 //                             name={name}
-//                             number={phone}
+//                             number={number}
 //                         />
 //                     )
 //                 })}
