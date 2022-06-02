@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import PropTypes from 'prop-types';
-// import toast from "react-hot-toast";
-// import { MdClose } from "react-icons/md";
+import toast from "react-hot-toast";
+import { MdClose } from "react-icons/md";
 
-//import { useGetContactByIdQuery, useUpdateContactMutation } from "redux/contacts/contactsSlice.js";
-//import { ContactForm } from "components/ContactForm/ContactForm.jsx";
+import { useGetContactsQuery, useUpdateContactMutation } from "redux/contacts/contactsSlice.js";
+import { ContactForm } from "components/ContactForm/ContactForm.jsx";
 import s from "./Modal.module.css";
 
 export const Modal = ({ onClose, id }) => {
     
-    // const { data: contact } = useGetContactByIdQuery(id);
-    // const [updateMaterial, result] = useUpdateContactMutation();
+    const { data: contacts } = useGetContactsQuery();
+    const [updateMaterial, result] = useUpdateContactMutation();
+
+    const contact = contacts.find(contact => contact.id === id);
+
+    
     
     
     useEffect(() => {
@@ -36,42 +40,42 @@ export const Modal = ({ onClose, id }) => {
         }
     };
 
-    // const handleUpdateContact = async fields => {
-    //     try {
-    //         await updateMaterial({ id: id, ...fields })
-    //         onClose();
-    //     }
-    //     catch (error) {
-    //         console.log(error)
-    //     }
-    // };
+    const handleUpdateContact = async fields => {
+        try {
+            await updateMaterial({ id: contact.id, ...fields })
+            onClose();
+        }
+        catch (error) {
+            console.log(error)
+        }
+    };
 
-    // useEffect(() => {
-    //     if (result.isSuccess) {
-    //         toast.success(`changes was saved`);
-    //     }
-    //     return
+    useEffect(() => {
+        if (result.isSuccess) {
+            toast.success(`changes was saved`);
+        }
+        return
       
-    // }, [result.isSuccess]);
+    }, [result.isSuccess]);
 
 
     return createPortal(
         <div className={s.Overlay}
             onClick={handleBackdropClick}>
-            {/* <div className={s.Modal}>
-                {contact && (
+            <div className={s.Modal}>
+                {contacts && (
                     <button
                         onClick={onClose}
                         type="button"
                         className={s.btnClose}><MdClose className={s.icon} /></button>
                 )}
-                {contact && (
+                {contacts && (
                     <ContactForm
-                        initialValues={{ name: contact.name, phone: contact.phone }}
+                        initialValues={{ name: contact.name, number: contact.number }}
                         onSubmit={handleUpdateContact}
                         buttonText='Save' />
                 )}
-            </div> */}
+            </div>
         </div>,
         document.querySelector('#modal-root'),
     );

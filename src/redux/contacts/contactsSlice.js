@@ -52,7 +52,10 @@ export const contactsApi = createApi({
             query: (fields) => ({
                 url: `/contacts/${fields.id}`,
                 method: 'PATCH',
-                data: fields,
+                data: {
+                    name: fields.name,
+                    number: fields.number
+                },
             }),
             invalidatesTags: ['Contact'],
         }),
