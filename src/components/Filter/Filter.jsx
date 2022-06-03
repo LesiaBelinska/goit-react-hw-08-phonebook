@@ -16,7 +16,7 @@ const onChangeFilter = (event) => dispatch(changeFilter(event.currentTarget.valu
     return (
         <div className={s.filter}>
             <label htmlFor={`${id}-filter`} className={s.label}>Find contacts by name</label>
-            <input className={s.input} type="text"
+            <input className={s.input} type="search"
                 id={`${id}-filter`}
                 value={filter}
                 onChange={onChangeFilter}
