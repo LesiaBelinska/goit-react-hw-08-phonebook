@@ -6,7 +6,7 @@ import { useGetContactsQuery } from 'redux/contacts/contactsSlice';
 import s from './ContactList.module.css';
 
 export const ContactList = () => {
-    const { data: contacts, isFetching} = useGetContactsQuery();
+    const { data: contacts, isFetching } = useGetContactsQuery();
    
     
     const filter = useSelector(state => state.filter);
