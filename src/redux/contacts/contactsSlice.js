@@ -24,12 +24,14 @@ export const contactsApi = createApi({
     baseQuery: axiosBaseQuery({
         baseUrl: 'https://connections-api.herokuapp.com',
     }),
+     keepUnusedDataFor: 5,
         tagTypes: ['Contact'],
         endpoints: builder => ({
             getContacts: builder.query({
                 query: () => ({
                     url: '/contacts',
-                    method: 'GET'
+                    method: 'GET',
+                    // keepUnusedDataFor:5,
                 }),
                 providesTags: ['Contact']
             }),
