@@ -8,6 +8,7 @@ import { PublicRoute } from "./PublicRoute/PublicRoute.jsx";
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute.jsx";
 import authOperations from "redux/auth/authOperations.js";
 import { Layout } from "./Layout/Layout";
+import { Container } from "./Container/Container.jsx";
 
 const HomePage = lazy(() => import("pages/HomePage/HomePage.jsx"));
 const RegisterPage = lazy(() => import("pages/RegisterPage/RegisterPage.jsx"));
@@ -27,21 +28,23 @@ export const App = () => {
 
 
   return (
-    !isFetchingCurrentUser && (
-       <>
-      <Toaster />
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <Routes>
-        <Route path="/" element={<Layout />}>
-        <Route index element={<PublicRoute><HomePage /></PublicRoute>} />
-          <Route path="/register" element={<PublicRoute restricted><RegisterPage /></PublicRoute>} />
-          <Route path="/login" element={<PublicRoute restricted><LoginPage /></PublicRoute>} />
-          <Route path="/contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-      </Suspense>
-    </>
-   )
+    <Container>
+      {!isFetchingCurrentUser && (
+        <>
+          <Toaster />
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<PublicRoute><HomePage /></PublicRoute>} />
+                <Route path="/register" element={<PublicRoute restricted><RegisterPage /></PublicRoute>} />
+                <Route path="/login" element={<PublicRoute restricted><LoginPage /></PublicRoute>} />
+                <Route path="/contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </>
+      )}
+    </Container>
   );
 };
