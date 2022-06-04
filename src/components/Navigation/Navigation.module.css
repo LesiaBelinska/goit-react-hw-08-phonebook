@@ -10,7 +10,7 @@
 
 .activeLink {
     font-size: 36px;
-    color: rgb(231, 66, 94);
+    color: #1e88e5;
 }
 
 .item:not(:last-child) {
