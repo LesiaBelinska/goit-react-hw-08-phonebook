@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { FaRegUser } from "react-icons/fa";
+import { Button } from "@mui/material";
 
 import authOperations from "redux/auth/authOperations.js";
 
@@ -13,15 +14,15 @@ export const UserMenu = () => {
 
     return (
         <div className={s.menu}>
-            <FaRegUser />
-            <p className={s.name}>Welcome, {name}</p>
-            <button
+            <FaRegUser className={s.icon}/>
+            <p className={s.name}>Welcome {name}</p>
+            <Button
                 type="button"
-                className={s.button}
+                variant="outlined"
                 onClick={() => dispatch(authOperations.logOut())}
             >
                 Sign out
-            </button>
+            </Button>
         </div>
     );
 }
