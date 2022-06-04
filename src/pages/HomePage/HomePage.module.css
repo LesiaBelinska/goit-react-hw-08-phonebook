@@ -1,0 +1,18 @@
+.container {
+margin-top: 100px;
+}
+
+.icon {
+    display: block;
+    margin: 0 auto;
+    fill: #b8b1b533;
+    width: 300px;
+    height: 100%;
+}
+
+.text {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 28px;
+    color: #635e6133;
+}
