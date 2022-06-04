@@ -4,7 +4,7 @@ import s from "./AuthNavigation.module.css";
 
 export const AuthNavigation = () => {
     return (
-        <nav>
+        <nav className={s.nav}>
             <ul className={s.list}>
                 <li className={s.item}>
                     <NavLink
