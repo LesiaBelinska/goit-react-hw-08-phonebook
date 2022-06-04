@@ -1,33 +1,33 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.3db23625.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.36ed8412.js",
-    "static/css/674.e3f23e2b.chunk.css": "/goit-react-hw-08-phonebook/static/css/674.e3f23e2b.chunk.css",
-    "static/js/674.cb0bc243.chunk.js": "/goit-react-hw-08-phonebook/static/js/674.cb0bc243.chunk.js",
-    "static/js/28.13feead4.chunk.js": "/goit-react-hw-08-phonebook/static/js/28.13feead4.chunk.js",
-    "static/js/664.af289073.chunk.js": "/goit-react-hw-08-phonebook/static/js/664.af289073.chunk.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.6fb71a57.js",
+    "static/css/674.023efcf2.chunk.css": "/goit-react-hw-08-phonebook/static/css/674.023efcf2.chunk.css",
+    "static/js/674.c61687ff.chunk.js": "/goit-react-hw-08-phonebook/static/js/674.c61687ff.chunk.js",
+    "static/js/903.7d5c4a9b.chunk.js": "/goit-react-hw-08-phonebook/static/js/903.7d5c4a9b.chunk.js",
+    "static/js/601.92bdcc41.chunk.js": "/goit-react-hw-08-phonebook/static/js/601.92bdcc41.chunk.js",
     "static/js/794.6679cfb2.chunk.js": "/goit-react-hw-08-phonebook/static/js/794.6679cfb2.chunk.js",
     "static/css/114.5aa60bde.chunk.css": "/goit-react-hw-08-phonebook/static/css/114.5aa60bde.chunk.css",
     "static/js/114.052bd001.chunk.js": "/goit-react-hw-08-phonebook/static/js/114.052bd001.chunk.js",
-    "static/js/856.290fd3a3.chunk.js": "/goit-react-hw-08-phonebook/static/js/856.290fd3a3.chunk.js",
+    "static/js/856.2026b6ad.chunk.js": "/goit-react-hw-08-phonebook/static/js/856.2026b6ad.chunk.js",
+    "static/js/888.4614e3cb.chunk.js": "/goit-react-hw-08-phonebook/static/js/888.4614e3cb.chunk.js",
     "static/js/319.a240fa2f.chunk.js": "/goit-react-hw-08-phonebook/static/js/319.a240fa2f.chunk.js",
-    "static/js/974.6dfcd750.chunk.js": "/goit-react-hw-08-phonebook/static/js/974.6dfcd750.chunk.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.3db23625.css.map": "/goit-react-hw-08-phonebook/static/css/main.3db23625.css.map",
-    "main.36ed8412.js.map": "/goit-react-hw-08-phonebook/static/js/main.36ed8412.js.map",
-    "674.e3f23e2b.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/674.e3f23e2b.chunk.css.map",
-    "674.cb0bc243.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/674.cb0bc243.chunk.js.map",
-    "28.13feead4.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/28.13feead4.chunk.js.map",
-    "664.af289073.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/664.af289073.chunk.js.map",
+    "main.6fb71a57.js.map": "/goit-react-hw-08-phonebook/static/js/main.6fb71a57.js.map",
+    "674.023efcf2.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/674.023efcf2.chunk.css.map",
+    "674.c61687ff.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/674.c61687ff.chunk.js.map",
+    "903.7d5c4a9b.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/903.7d5c4a9b.chunk.js.map",
+    "601.92bdcc41.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/601.92bdcc41.chunk.js.map",
     "794.6679cfb2.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/794.6679cfb2.chunk.js.map",
     "114.5aa60bde.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/114.5aa60bde.chunk.css.map",
     "114.052bd001.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/114.052bd001.chunk.js.map",
-    "856.290fd3a3.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/856.290fd3a3.chunk.js.map",
-    "319.a240fa2f.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/319.a240fa2f.chunk.js.map",
-    "974.6dfcd750.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/974.6dfcd750.chunk.js.map"
+    "856.2026b6ad.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/856.2026b6ad.chunk.js.map",
+    "888.4614e3cb.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/888.4614e3cb.chunk.js.map",
+    "319.a240fa2f.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/319.a240fa2f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3db23625.css",
-    "static/js/main.36ed8412.js"
+    "static/js/main.6fb71a57.js"
   ]
 }
