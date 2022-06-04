@@ -9,7 +9,7 @@ export const Navigation = () => {
     
 
     return (
-        <nav>
+        <nav className={s.nav}>
             <ul className={s.list}>
                 <li className={s.item}>
                     <NavLink
