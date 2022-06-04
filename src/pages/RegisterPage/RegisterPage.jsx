@@ -1,4 +1,6 @@
 import SignUp from "components/SignUp/SignUp.js";
+
+
 export default function RegisterPage() {
 
     return (
@@ -7,8 +9,6 @@ export default function RegisterPage() {
         </div>
     );
 }
-
-
 
 
 
