@@ -19,18 +19,18 @@ const theme = createTheme();
 
 export default function SignUp() {
 
-const dispath = useDispatch();
+const dispatch = useDispatch();
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const send = {
-        name: data.get('name'),
+    const data = new FormData(event.currentTarget);
+    const send = {
+      name: data.get('name'),
       email: data.get('email'),
       password: data.get('password'),
-      };
-      dispath(authOperations.register(send));
+    };
+    dispatch(authOperations.register(send));
   };
 
   return (
