@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Button } from '@mui/material';
+import Box from '@mui/material/Box';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
 import { useDeleteContactMutation } from 'redux/contacts/contactsSlice';
 import { Modal } from 'components/Modal/Modal.jsx';
@@ -28,17 +32,32 @@ export const ContactListItem = ({ id, name, number }) => {
 
     return (
         <li className={s.item}>{name}: {number}
-            <div className={s.btnGroup}>
-                <button className={s.button} type="button"
+            <Box sx={{'& > :not(style)': { m: 1 }}}>
+                <Button
+                    type="button"
+                    color="primary"
+                    aria-label="edit"
                     onClick={onDeleteContact}
                     disabled={result.isLoading}
-                >
-                    Delete
-                </button>
-                <button
+                    variant="contained"
+                    size="small"
                     className={s.button}
-                    onClick={toggleModal}>Update</button>
-            </div>
+                >
+                    <DeleteOutlinedIcon />
+                </Button>
+             
+                <Button
+                    type="button"
+                    color="primary"
+                    aria-label="delete"
+                    className={s.button}
+                    onClick={toggleModal}
+                    variant="contained"
+                    size="small"
+                >
+                    <EditIcon />
+                </Button>
+            </Box>
             {showModal &&
                 <Modal
                     onClose={toggleModal}
