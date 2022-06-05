@@ -19,6 +19,9 @@ import authOperations from "redux/auth/authOperations.js";
 
 const theme = createTheme();
 
+const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
+const passwordRegExp = /^[^\s]+(?:$|.*[^\s]+$)/;
+
 export default function SignInSide() {
     
     const dispatch = useDispatch();
@@ -67,7 +70,7 @@ export default function SignInSide() {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
                 required
@@ -77,6 +80,7 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                validation={emailRegExp}
               />
               <TextField
                 margin="normal"
@@ -87,6 +91,7 @@ export default function SignInSide() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                validation={passwordRegExp}
               />
               <Button
                 type="submit"
