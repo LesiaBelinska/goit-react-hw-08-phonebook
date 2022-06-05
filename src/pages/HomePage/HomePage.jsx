@@ -9,8 +9,8 @@ export default function HomePage() {
         <div className={s.container}>
             <h1 className={s.title}>Phone book</h1>
             {/* <MdPhonelinkLock className={s.icon}/> */}
-            <MdOutlineMenuBook className={s.icon}/>
+            <MdOutlineMenuBook className={s.icon} />
             <p className={s.text}>Please, Sign in or Sign up </p>
         </div>
-    )
+    );
 }
