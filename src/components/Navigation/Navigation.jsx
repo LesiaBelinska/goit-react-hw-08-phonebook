@@ -21,12 +21,12 @@ export const Navigation = () => {
                 </li>
                 <li className={s.item}>
                     {isLoggedIn &&
-                    <NavLink
-                        to="/contacts"
-                        className={({ isActive }) => isActive ? `${s.activeLink}` : `${s.link}`}
-                    >
-                        Contacts
-                    </NavLink>}
+                        <NavLink
+                            to="/contacts"
+                            className={({ isActive }) => isActive ? `${s.activeLink}` : `${s.link}`}
+                        >
+                            Contacts
+                        </NavLink>}
                 </li>
             </ul>
         </nav>
