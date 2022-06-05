@@ -19,6 +19,8 @@ import authOperations from "redux/auth/authOperations.js";
 
 const theme = createTheme();
 
+const emailValidion = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
+const passwordValidation = /^[^\s]+(?:$|.*[^\s]+$)/;
 
 export default function SignInSide() {
     
@@ -78,7 +80,7 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                pattern="/^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/"
+                error={emailValidion}
                 helperText="not correct, try again"
               />
               <TextField
@@ -90,7 +92,7 @@ export default function SignInSide() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                pattern="/^[^\s]+(?:$|.*[^\s]+$)/;"
+                error={passwordValidation}
                 helperText="not correct, try again"
               />
               <Button

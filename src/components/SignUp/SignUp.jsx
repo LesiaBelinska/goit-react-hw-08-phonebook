@@ -17,6 +17,10 @@ import authOperations from "redux/auth/authOperations.js"
 
 const theme = createTheme();
 
+const emailValidion = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
+const passwordValidation = /^[^\s]+(?:$|.*[^\s]+$)/;
+
+
 export default function SignUp() {
 
 const dispatch = useDispatch();
@@ -72,7 +76,7 @@ const dispatch = useDispatch();
                   label="Email Address"
                   name="email"
                   autoComplete="email"
-                  pattern="/^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/"
+                  error={emailValidion}
                   helperText="not correct, try again"
                 />
               </Grid>
@@ -85,7 +89,7 @@ const dispatch = useDispatch();
                   type="password"
                   id="password"
                   autoComplete="new-password"
-                  pattern="/^[^\s]+(?:$|.*[^\s]+$)/;"
+                  error={passwordValidation}
                   helperText="not correct, try again"
                 />
               </Grid>
