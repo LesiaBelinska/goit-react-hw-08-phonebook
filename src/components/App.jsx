@@ -9,6 +9,7 @@ import { PrivateRoute } from "./PrivateRoute/PrivateRoute.jsx";
 import authOperations from "redux/auth/authOperations.js";
 import { Layout } from "./Layout/Layout";
 import { Container } from "./Container/Container.jsx";
+import { Loader } from "./Loader/Loader.jsx";
 
 const HomePage = lazy(() => import("pages/HomePage/HomePage.jsx"));
 const RegisterPage = lazy(() => import("pages/RegisterPage/RegisterPage.jsx"));
@@ -32,7 +33,7 @@ export const App = () => {
       {!isFetchingCurrentUser && (
         <>
           <Toaster />
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<PublicRoute><HomePage /></PublicRoute>} />
