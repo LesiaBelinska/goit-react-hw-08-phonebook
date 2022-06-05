@@ -1,6 +1,6 @@
-
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { Grid } from '@mui/material';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
@@ -45,30 +45,36 @@ export const ContactForm = ({ initialValues = {
 
     <div>
       <form onSubmit={formik.handleSubmit}
-      autoComplete="off">
-        <TextField 
-        fullWidth
-          id={`${id}-name`}
-          type="text"
-          name="name"
-          label="Name"
-          value={formik.values.name}
-          onChange={formik.handleChange}
-          error={formik.touched.name && Boolean(formik.errors.name)}
-          helperText={formik.touched.name && formik.errors.name}
-        />
-         <TextField 
-        fullWidth
-          id={`${id}-number`}
-          type="tel"
-          name="number"
-          label="Number"
-          value={formik.values.number}
-          onChange={formik.handleChange}
-          error={formik.touched.number && Boolean(formik.errors.number)}
-          helperText={formik.touched.number && formik.errors.number}
-        />
-         <Button color="primary" variant="contained" fullWidth type="submit">
+        autoComplete="off">
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              id={`${id}-name`}
+              type="text"
+              name="name"
+              label="Name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+              helperText={formik.touched.name && formik.errors.name}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              id={`${id}-number`}
+              type="tel"
+              name="number"
+              label="Number"
+              value={formik.values.number}
+              onChange={formik.handleChange}
+              error={formik.touched.number && Boolean(formik.errors.number)}
+              helperText={formik.touched.number && formik.errors.number}
+            />
+          </Grid>
+        </Grid>
+        <Button color="primary" variant="contained" fullWidth sx={{ mt: 3, mb: 2 }} type="submit">
           {buttonText}
         </Button>
       </form>
