@@ -14,7 +14,7 @@ export const UserMenu = () => {
 
     return (
         <div className={s.menu}>
-            <FaRegUser className={s.icon}/>
+            <FaRegUser className={s.icon} />
             <p className={s.name}>Welcome {name}</p>
             <Button
                 type="button"
