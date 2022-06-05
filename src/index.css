@@ -18,6 +18,14 @@ html {
   box-sizing: border-box;
 }
 
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 *,
 *::before,
 *::after {
@@ -52,14 +60,14 @@ a {
   text-decoration: none;
 }
 
-.container {
+/* .container {
   padding-top: 50px;
   padding-bottom: 50px;
   margin: 0 auto;
   width: 1200px;
-}
+} */
 
-button {
+/* button {
   cursor: pointer;
   min-width: 120px;
   height: 35px;
@@ -73,4 +81,4 @@ button {
 
 button:hover {
   background-color: rgb(222, 220, 220);
-}
+} */
