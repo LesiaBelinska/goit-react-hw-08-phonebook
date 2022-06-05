@@ -32,7 +32,7 @@ export const ContactListItem = ({ id, name, number }) => {
 
     return (
         <li className={s.item}>{name}: {number}
-            <Box sx={{'& > :not(style)': { m: 1 }}}>
+            <Box sx={{ '& > :not(style)': { m: 1 } }}>
                 <Button
                     type="button"
                     color="primary"
