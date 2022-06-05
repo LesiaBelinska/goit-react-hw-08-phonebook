@@ -8,6 +8,8 @@ import { useGetContactsQuery, useUpdateContactMutation } from "redux/contacts/co
 import { ContactForm } from "components/ContactForm/ContactForm.jsx";
 import s from "./Modal.module.css";
 
+const modalRoot = document.querySelector('#modal-root');
+
 export const Modal = ({ onClose, id }) => {
     
     const { data: contacts } = useGetContactsQuery();
@@ -77,7 +79,7 @@ export const Modal = ({ onClose, id }) => {
                 )}
             </div>
         </div>,
-        document.querySelector('#modal-root'),
+        modalRoot
     );
 }
 
