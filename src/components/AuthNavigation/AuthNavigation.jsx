@@ -9,7 +9,7 @@ export const AuthNavigation = () => {
                 <li className={s.item}>
                     <NavLink
                         to="/register"
-                        className={({isActive})=> isActive ? `${s.activeLink}` : `${s.link}`}
+                        className={({ isActive }) => isActive ? `${s.activeLink}` : `${s.link}`}
                     >
                         Sign up
                     </NavLink>
@@ -17,7 +17,7 @@ export const AuthNavigation = () => {
                 <li className={s.item}>
                     <NavLink
                         to="/login"
-                        className={({isActive})=> isActive ? `${s.activeLink}` : `${s.link}`}
+                        className={({ isActive }) => isActive ? `${s.activeLink}` : `${s.link}`}
                     >
                         Sign in
                     </NavLink>
