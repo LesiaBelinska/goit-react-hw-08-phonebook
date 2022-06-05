@@ -72,6 +72,8 @@ const dispatch = useDispatch();
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  pattern="/^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/"
+                  helperText="not correct, try again"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -83,6 +85,8 @@ const dispatch = useDispatch();
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  pattern="/^[^\s]+(?:$|.*[^\s]+$)/;"
+                  helperText="not correct, try again"
                 />
               </Grid>
             </Grid>
