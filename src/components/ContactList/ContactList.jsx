@@ -19,7 +19,7 @@ export const ContactList = () => {
     return (
         <>
             {contacts ? isFetching : <p className={s.loading}>Loading...</p>}
-            <ul>
+            <ul className={s.list}>
                 {contacts && filteredContacts.map(({ id, name, number }) => {
                     return (
                         <ContactListItem
