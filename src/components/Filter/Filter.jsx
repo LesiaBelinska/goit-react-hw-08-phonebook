@@ -25,13 +25,13 @@ const dispatch = useDispatch();
       noValidate
       autoComplete="off"
     >
-          <TextField id={`${id}-filter`}
-              label="Find contacts by name" 
-              variant="outlined"
-              type="search" 
-              value={filter}
-              onChange={onChangeFilter}
-         />
+      <TextField id={`${id}-filter`}
+        label="Find contacts by name"
+        variant="outlined"
+        type="search"
+        value={filter}
+        onChange={onChangeFilter}
+      />
     </Box>
   );
 }
