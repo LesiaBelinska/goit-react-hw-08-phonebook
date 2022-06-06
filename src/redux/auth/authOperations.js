@@ -20,7 +20,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
         token.set(data.token);
         return data;
     } catch (error) {
-        toast.error('Please, try again, entered data is incorect');
+        toast.error('Please, try again, entered data is incorrect');
     }
 });
 
@@ -30,7 +30,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
         token.set(data.token);
         return data;
     } catch (error) {
-        toast.error('Please, try again, name or email is incorrect');
+        toast.error('Please, try again, email or password is incorrect');
     }
 });
 
