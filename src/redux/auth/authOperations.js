@@ -20,26 +20,26 @@ const register = createAsyncThunk('auth/register', async credentials => {
         token.set(data.token);
         return data;
     } catch (error) {
-        toast.error('Please, try again, entered data is incorrect');
+        toast.error("Email or password is incorrect format. Please, try again");
     }
 });
 
-const logIn = createAsyncThunk('auth/login', async credentials => {
+const logIn = createAsyncThunk('auth/login', async  credentials => {
     try {
         const { data } = await axios.post('/users/login', credentials);
         token.set(data.token);
         return data;
     } catch (error) {
-        toast.error('Please, try again, email or password is incorrect');
+        toast.error("Email or password is incorrect. Please, try again");
     }
 });
 
-const logOut = createAsyncThunk('auth/logout', async () => {
+const logOut = createAsyncThunk('auth/logout', async ()  => {
     try {
         await axios.post('users/logout');
         token.unset();
     } catch (error) {
-        console.log(error);
+        toast.error("Something went wrong, please, try again");
     }
 });
 
@@ -49,14 +49,14 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh',
         const persistedToken = state.auth.token;
 
         if (persistedToken === null) {
-            return thunkAPI.rejectWithValue();
+            return thunkAPI.rejectWithValue("need to sign in");
         }
         token.set(persistedToken);
         try {
             const { data } = await axios.get('/users/current');
             return data;
         } catch (error) {
-            toast.error('oops, please, sign in');
+            return thunkAPI.rejectWithValue("Oops, please, sign in or sign on");
         }
     },
 );
