@@ -20,7 +20,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
         token.set(data.token);
         return data;
     } catch (error) {
-        toast.error('error, try again');
+        toast.error('Please, try again, entered data is incorect');
     }
 });
 
@@ -30,7 +30,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
         token.set(data.token);
         return data;
     } catch (error) {
-        toast.error('error, try again');
+        toast.error('Please, try again, name or email is incorrect');
     }
 });
 
@@ -56,7 +56,7 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh',
             const { data } = await axios.get('/users/current');
             return data;
         } catch (error) {
-            console.log(error)
+            toast.error('oops, please, sign in');
         }
     },
 );
