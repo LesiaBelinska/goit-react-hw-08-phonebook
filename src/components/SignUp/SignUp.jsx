@@ -55,7 +55,7 @@ const dispatch = useDispatch();
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -74,6 +74,7 @@ const dispatch = useDispatch();
                   fullWidth
                   id="email"
                   label="Email Address"
+                  type="email"
                   name="email"
                   autoComplete="email"
                   // error={emailValidion}
