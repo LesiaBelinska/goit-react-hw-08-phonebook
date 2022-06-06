@@ -76,8 +76,9 @@ export default function SignInSide() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
                 name="email"
+                label="Email Address"
+                type="email"
                 autoComplete="email"
                 autoFocus
                 // error={emailValidion}
